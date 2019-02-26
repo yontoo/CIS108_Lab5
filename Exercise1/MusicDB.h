@@ -8,7 +8,8 @@ namespace musicdb
 {
 	void save();
 	void add();
-	void load();
+	void list(int);
 	int total();
 	void help();
+	int songs[8];
 }

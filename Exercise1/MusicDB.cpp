@@ -6,21 +6,22 @@
 
 std::string genre;
 song local;
+int musicdb::songs = { };
 
 //save some music
 void musicdb::save()
 {
 	std::ofstream database;
 	database.open("Database.txt");
-	database << "Title:		" << local.song << "\nArtist:		" << local.artist;
+	database << "Title:		" << local.song << "\nArtist:		" << local.artist << "\nAlbum:			" << local.album << "\nTrack #:			" << local.trk_num << "\nRelease year:			" << local.year;
 	database.close();
 }
 
 //load some music
-void load()
-{
-	
-}
+//void musicdb::list(int x)
+//{
+//	for(x = 0; x < song_count; x++)
+//}
 
 //add some music
 void musicdb::add()
@@ -29,7 +30,7 @@ void musicdb::add()
 	genre = "";
 
 	std::cout << "Enter the song title: ";
-	std::getline (std::cin, local.song);
+	std::cin.getline (local.song, 64);
 	std::cout << "\n";
 
 	std::cout << "Enter the artist: ";

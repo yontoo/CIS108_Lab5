@@ -3,7 +3,7 @@
 #pragma once
 
 struct song {
-	std::string song;
+	char song[64];
 	std::string artist;
 	std::string album;
 	int trk_num;		//Track number

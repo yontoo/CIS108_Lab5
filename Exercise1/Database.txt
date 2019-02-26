@@ -1,2 +1,5 @@
-Title:		a
-Artist:		a
+Title:		Around the World
+Artist:		Daft Punk
+Album:			Homework
+Track #:			7
+Release year:			1997
