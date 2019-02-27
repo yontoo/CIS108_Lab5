@@ -6,7 +6,8 @@
 
 std::string genre;
 song local;
-int musicdb::songs = { };
+int total_songs = 0;
+
 
 //save some music
 void musicdb::save()
@@ -34,11 +35,11 @@ void musicdb::add()
 	std::cout << "\n";
 
 	std::cout << "Enter the artist: ";
-	std::getline(std::cin, local.artist);
+	std::cin.getline (local.artist, 32);
 	std::cout << "\n";
 
 	std::cout << "Enter the album name: ";
-	std::getline(std::cin, local.album);
+	std::cin.getline (local.album, 64);
 	std::cout << "\n";
 
 	std::cout << "Album track number: ";
@@ -49,11 +50,23 @@ void musicdb::add()
 	std::cin >> local.year;
 	std::cout << "\n";
 
-	//std::cout << "Enter genre: ";
-	//std::getline(std::cin, genre);
+	std::cout << "Enter genre: ";
+	std::getline(std::cin, genre);
+
+	//for(int x = 0, x > musicdb::song_array)
 
 
 		
+}
+
+void musicdb::help()
+{
+	std::cout << "Commands in this program:\n";
+	std::cout << "1. add - Add a new song to the database.\n";
+	std::cout << "2. list - List the songs in the database.\n";
+	std::cout << "3. save - Save the songs to the database.\n";
+	std::cout << "4. help - Display this menu again.\n";
+	std::cout << "5. exit - Close program.\n";
 }
 
 //total number of songs

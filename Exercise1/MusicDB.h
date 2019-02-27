@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include <iostream>
-
+#include "Song.h"
 
 
 namespace musicdb
@@ -11,5 +11,5 @@ namespace musicdb
 	void list(int);
 	int total();
 	void help();
-	int songs[8];
+	//song songs_array[8];
 }

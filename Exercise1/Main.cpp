@@ -28,6 +28,11 @@ int main()
 		{
 			musicdb::save();
 		}
+
+		if (choice == "help")
+		{
+			musicdb::help();
+		}
 	} while (choice != "exit");
 
 
