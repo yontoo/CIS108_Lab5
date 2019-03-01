@@ -29,6 +29,11 @@ int main()
 			musicdb::save();
 		}
 
+		else if (choice == "list")
+		{
+			musicdb::list();
+		}
+
 		if (choice == "help")
 		{
 			musicdb::help();
