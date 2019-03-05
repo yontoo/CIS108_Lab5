@@ -6,10 +6,12 @@
 
 
 
-std::string genre = "";
+std::string genre_str = "";
 song local_array[8];
 int total_songs = 0;
 int curr_song_num = 1;
+song::genres genre;
+int genre_int;
 
 
 //save some music
@@ -32,6 +34,7 @@ void musicdb::list()
 {
 	std::string song_info;
 	std::ifstream database("Database.txt");
+	std::cout << "Total songs in database: " << total_songs << "\n";
 	if (database.is_open())
 	{
 		while (std::getline(database, song_info))
@@ -64,11 +67,17 @@ void musicdb::add()
 
 		std::cout << "Enter release year: ";
 		std::cin >> local_array[total_songs].year;
+		std::cin.ignore();
 		std::cout << "\n";
 
 		std::cout << "Enter genre: ";
-		std::getline(std::cin, genre);
+		std::cin.getline(local_array[total_songs].genre, 10);
 		std::cout << "\n";
+
+		if (genre_int == genre)
+		{
+			
+		}
 		total_songs++;
 	}
 		
@@ -91,6 +100,8 @@ void musicdb::clear()
 	std::ofstream database;
 	database.open("Database.txt", std::ofstream::trunc);
 	database.close();
+	total_songs = 0;
+	curr_song_num = 1;
 }
 
 
