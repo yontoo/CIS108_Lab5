@@ -30,13 +30,16 @@ void musicdb::save()
 //load some music
 void musicdb::list()
 {
-	//std::string x;
-	//std::ifstream database("Database.txt");
-	//while(std::getline(database, x))
-	//{
-	//	std::cout << database.rdbuf;
-	//	database.close();
-	//}
+	std::string song_info;
+	std::ifstream database("Database.txt");
+	if (database.is_open())
+	{
+		while (std::getline(database, song_info))
+		{
+			std::cout << song_info << "\n";
+		}
+		database.close();
+	}
 }
 
 //add some music
@@ -77,8 +80,17 @@ void musicdb::help()
 	std::cout << "1. add - Add a new song to the database.\n";
 	std::cout << "2. list - List the songs in the database.\n";
 	std::cout << "3. save - Save the songs to the database.\n";
-	std::cout << "4. help - Display this menu again.\n";
-	std::cout << "5. exit - Close program.\n";
+	std::cout << "4. clear - Clear the current songs inside of the database.\n";
+	std::cout << "5. help - Display this menu again.\n";
+	std::cout << "6. exit - Close program.\n";
+}
+
+//clear the music
+void musicdb::clear()
+{
+	std::ofstream database;
+	database.open("Database.txt", std::ofstream::trunc);
+	database.close();
 }
 
 

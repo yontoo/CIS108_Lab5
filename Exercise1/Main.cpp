@@ -7,12 +7,7 @@
 int main()
 {
 	std::string choice;
-	std::cout << "Commands in this program:\n";
-	std::cout << "1. add - Add a new song to the database.\n";
-	std::cout << "2. list - List the songs in the database.\n";
-	std::cout << "3. save - Save the songs to the database.\n";
-	std::cout << "4. help - Display this menu again.\n";
-	std::cout << "5. exit - Close program.\n";
+	musicdb::help();
 	do
 	{
 		std::cout << ">";
@@ -34,9 +29,13 @@ int main()
 			musicdb::list();
 		}
 
-		if (choice == "help")
+		else if (choice == "help")
 		{
 			musicdb::help();
+		}
+		else if (choice == "clear")
+		{
+			musicdb::clear();
 		}
 	} while (choice != "exit");
 
