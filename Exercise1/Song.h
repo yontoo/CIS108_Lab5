@@ -8,6 +8,7 @@ struct song {
 	char album[64];
 	int trk_num;		//Track number
 	int year;
+	char genre[20];
 	enum genres {
 		Blues = 0,
 		Country,

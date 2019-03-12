@@ -7,6 +7,7 @@
 int main()
 {
 	std::string choice;
+	musicdb::init_load();
 	musicdb::help();
 	do
 	{
@@ -38,7 +39,5 @@ int main()
 			musicdb::clear();
 		}
 	} while (choice != "exit");
-
-
 	return 0;
 }

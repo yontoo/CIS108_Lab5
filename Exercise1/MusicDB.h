@@ -9,4 +9,6 @@ namespace musicdb
 	void list();
 	void help();
 	void clear();
+	void init_load();
+	void checking();
 }
